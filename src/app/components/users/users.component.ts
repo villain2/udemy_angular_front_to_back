@@ -22,13 +22,14 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'John',
           lastName: 'Doe',
-          age: 30,
+          age: 70,
           address: {
             street: '500 Fleet St',
             city: 'Balimore',
             state: 'MD'
           },
-          image: 'http://lorempixel.com/600/600/people/3'
+          isActive: true,
+          registered: new Date('01/02/2018 08:30:00')
         },
         {
           firstName: 'Jane',
@@ -39,7 +40,8 @@ export class UsersComponent implements OnInit {
             city: 'Balimore',
             state: 'MD'
           },
-          image: 'http://lorempixel.com/600/600/people/2'
+          isActive: false,
+          registered: new Date('02/02/2017 08:30:00')
         },
         {
           firstName: 'Kenny',
@@ -50,26 +52,15 @@ export class UsersComponent implements OnInit {
             city: 'Balimore',
             state: 'MD'
           },
-          image: 'http://lorempixel.com/600/600/people/1'
+          isActive: true,
+          registered: new Date('06/12/2019 08:30:00')
         }
       ];
 
     this.loaded = true;
-/*
-    this.addUser({
-      firstName: 'Seth',
-      lastName: 'Rollins'
-    });*/
   }
 
   addUser(user: User) {
     this.users.push(user);
   }
-}
-
-interface Address{
-  street: string,
-  city: string,
-  state: string,
-  zipcode: number
 }
