@@ -1,5 +1,5 @@
 <h2>Users</h2>
-<button [disabled]="!enableAdd" class="btn btn-block mb-3" [ngClass]="currentClasses">
+<button (click)="addUser({firstName: 'Kazuchika', lastName: 'Okada', isActive: true})" [disabled]="!enableAdd" class="btn btn-block mb-3" [ngClass]="currentClasses">
   Add New User
 </button>
 
