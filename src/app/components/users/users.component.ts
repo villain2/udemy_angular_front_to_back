@@ -11,12 +11,7 @@ export class UsersComponent implements OnInit {
   user: User = {
     firstName: '',
     lastName: '',
-    age: null,
-    address: {
-      street: '',
-      city: '',
-      state: ''
-    }
+    email: ''
   };
   users: User[];
   showExtended: boolean = true;
@@ -33,12 +28,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'John',
           lastName: 'Doe',
-          age: 70,
-          address: {
-            street: '500 Fleet St',
-            city: 'Balimore',
-            state: 'MD'
-          },
+          email: 'johndoe@gmail.com',
           isActive: true,
           registered: new Date('01/02/2018 08:30:00'),
           hide: true
@@ -46,12 +36,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Jane',
           lastName: 'Doe',
-          age: 25,
-          address: {
-            street: '500 Fleet St',
-            city: 'Balimore',
-            state: 'MD'
-          },
+          email: 'janedoe@hotmail.com',
           isActive: false,
           registered: new Date('02/02/2017 08:30:00'),
           hide: true
@@ -59,12 +44,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Kenny',
           lastName: 'Omega',
-          age: 33,
-          address: {
-            street: '225 Fleet St',
-            city: 'Balimore',
-            state: 'MD'
-          },
+          email: 'komega@aew.com',
           isActive: true,
           registered: new Date('06/12/2019 08:30:00'),
           hide: true
@@ -74,7 +54,7 @@ export class UsersComponent implements OnInit {
     this.loaded = true;
   }
 
-  addUser() {
+  /*addUser() {
     this.user.isActive = true;
     this.user.registered = new Date();
     this.users.unshift(this.user);
@@ -82,26 +62,12 @@ export class UsersComponent implements OnInit {
     this.user = {
       firstName: '',
       lastName: '',
-      age: null,
-      address: {
-        street: '',
-        city: '',
-        state: ''
-      }
+      email: ''
     }
-  }
-
-  toggleHide(user: User) {
-    //user.hide = !user.hide;
-  }
+  }*/
 
   onSubmit (e) {
     console.log('submitted');
     e.preventDefault();
-  }
-
-  fireEvent (e) {
-    console.log(e.target.value);
-    console.log(e.type);
   }
 }
