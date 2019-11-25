@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service';
+import { UserService } from '../../services/user.service';
 import { User } from '../../models/User';
 
 @Component({
@@ -10,7 +10,7 @@ import { User } from '../../models/User';
 export class UserComponent implements OnInit {
   user: User;
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: UserService) {
     console.log('constructor ran');
   }
 

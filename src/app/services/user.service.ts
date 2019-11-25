@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import {User} from '../models/User';
 
 @Injectable()
-export class DataService {
+export class UserService {
   users: User[];
   data: Observable<any>;
 

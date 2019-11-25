@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataService } from '../../services/data.service';
+import { UserService } from '../../services/user.service';
 import { User } from '../../models/User';
 
 @Component({
@@ -21,16 +21,16 @@ export class UsersComponent implements OnInit {
   @ViewChild('userForm') form: any;
   data: any;
 
-  constructor(private dataService: DataService) {
+  constructor(private userService: UserService) {
     console.log('constructor ran');
   }
 
   ngOnInit(): void {
-    this.dataService.getData().subscribe(data => {
+    this.userService.getData().subscribe(data => {
       console.log(data);
     });
 
-    this.dataService.getUsers().subscribe(users => {
+    this.userService.getUsers().subscribe(users => {
       this.users = users;
       this.loaded = true;
     });
@@ -45,7 +45,7 @@ export class UsersComponent implements OnInit {
       value.hide = true;
 
       // sdd user
-      this.dataService.addUser(value);
+      this.userService.addUser(value);
 
       // reset form
       this.form.reset();
