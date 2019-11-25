@@ -25,32 +25,7 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.users = [
-        {
-          firstName: 'John',
-          lastName: 'Doe',
-          email: 'johndoe@gmail.com',
-          isActive: true,
-          registered: new Date('01/02/2018 08:30:00'),
-          hide: true
-        },
-        {
-          firstName: 'Jane',
-          lastName: 'Doe',
-          email: 'janedoe@hotmail.com',
-          isActive: false,
-          registered: new Date('02/02/2017 08:30:00'),
-          hide: true
-        },
-        {
-          firstName: 'Kenny',
-          lastName: 'Omega',
-          email: 'komega@aew.com',
-          isActive: true,
-          registered: new Date('06/12/2019 08:30:00'),
-          hide: true
-        }
-      ];
+    this.users = this.dataService.getUsers();
 
     this.loaded = true;
   }
@@ -62,9 +37,11 @@ export class UsersComponent implements OnInit {
       value.isActive = true;
       value.registered = new Date();
       value.hide = true;
-      this.users.unshift(value);
 
-      //reset form
+      // sdd user
+      this.dataService.addUser(value);
+
+      // reset form
       this.form.reset();
     }
   }
