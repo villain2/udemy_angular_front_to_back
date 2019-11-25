@@ -15,6 +15,7 @@ import { AboutComponent } from './components/about/about.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UsersComponent } from './components/users/users.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { PostFormComponent } from './components/post-form/post-form.component';
 
 const appRoutes: Routes 	= [
 	{path: '', component: UserComponent},
@@ -28,7 +29,8 @@ const appRoutes: Routes 	= [
     AboutComponent,
     NavbarComponent,
     UsersComponent,
-    PostsComponent
+    PostsComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,
