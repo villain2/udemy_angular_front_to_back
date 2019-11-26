@@ -17,10 +17,9 @@ import { UsersComponent } from './components/users/users.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
 
 const appRoutes: Routes 	= [
-	{path: '', component: UserComponent},
-	{path: 'about', component: AboutComponent}
 ]
 
 @NgModule({
@@ -31,7 +30,8 @@ const appRoutes: Routes 	= [
     NavbarComponent,
     UsersComponent,
     PostsComponent,
-    PostFormComponent
+    PostFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
