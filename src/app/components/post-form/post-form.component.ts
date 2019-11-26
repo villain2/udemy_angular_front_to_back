@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {EventEmitter, Output, Input, Component, OnInit} from '@angular/core';
 import { PostService } from '../../services/post.service';
-import { EventEmitter, Output} from '@angular/core';
 
 import { Post} from '../../models/Post';
 
@@ -10,9 +9,9 @@ import { Post} from '../../models/Post';
   styleUrls: ['./post-form.component.css']
 })
 export class PostFormComponent implements OnInit {
-  // properties
-  post: Post;
   @Output() newPost: EventEmitter<Post> = new EventEmitter();
+  @Input() currentPost: Post;
+  @Input() isEdit: boolean;
 
   constructor(private postService: PostService) { }
 
@@ -20,7 +19,7 @@ export class PostFormComponent implements OnInit {
   }
 
   addPost(title, body) {
-    if(!title || !body) {
+    if (!title || !body) {
       alert('Please add post.');
     } else {
       // make post request through service
@@ -29,6 +28,10 @@ export class PostFormComponent implements OnInit {
         this.newPost.emit(post);
       });
     }
+  }
+
+  updatePost() {
+    console.log(123);
   }
 
 }
